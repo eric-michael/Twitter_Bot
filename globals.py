@@ -1,8 +1,14 @@
 # These variables change based on your App and who you want to re-tweet.
+# Consult the Twitter API on how to acquire these values.
 
+# The user name of the user you want to retweet.
 user = 'realDonaldTrump'
-app_key = 'ouBzjnwPPoKrURxZJZb4Oie2I'
-app_secret = 'wR8wPBogLgES6asT0AUjLmu9IxxEOBESum7P9YxnBJKJDv9S5q'
-api_search_url = 'https://api.twitter.com/1.1/tweets/search/30day/sesh.json'
-bearer_token = 'Bearer AAAAAAAAAAAAAAAAAAAAAFlkAAEAAAAAgegEA9ZlXmNKHKzXkdSMze59P%2Bo' \
-               '%3DLfcFRqChujUI2JbSQEPEPFLpSCoHloM1VBeZPQkjgTUjcc4rOV '
+
+keys_file = open('keys', "r")
+
+keys_list = keys_file.readlines()
+
+app_key = keys_list[0].strip('\n')
+app_secret = keys_list[1].strip('\n')
+api_search_url = keys_list[2].strip('\n')
+bearer_token = keys_list[3].strip('\n')
